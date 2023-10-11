@@ -14,7 +14,7 @@ on:
 
 jobs:
   release:
-    runs-on: github
+    runs-on: ubuntu-latest
 
     steps:
       - name: Debug
