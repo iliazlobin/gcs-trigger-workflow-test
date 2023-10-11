@@ -1,0 +1,24 @@
+name: Release
+env:
+  project-folder: .
+
+on:
+  workflow_dispatch:
+    inputs:
+      sourceVersion:
+        description: 'Input version'
+        required: true
+      targetVersion:
+        description: 'Output version'
+        required: true
+
+jobs:
+  release:
+    runs-on: github
+
+    steps:
+      - name: Debug
+        shell: bash
+        run: |
+          echo "sourceVersion=${{ github.event.inputs.sourceVersion }}"
+          echo "targetVersion=${{ github.event.inputs.targetVersion }}"
